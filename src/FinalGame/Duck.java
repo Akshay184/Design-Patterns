@@ -4,15 +4,23 @@ import FinalGame.FlyBehavior.FlyBehavior;
 import FinalGame.QuackBehavior.QuackBehavior;
 
 public abstract class Duck {
-    FlyBehavior flyBehavior;
-    QuackBehavior quackBehavior;
+    public FlyBehavior flyBehavior;
+    public QuackBehavior quackBehavior;
+
+    public void setFlyBehavior(FlyBehavior fb) {
+        this.flyBehavior = fb;
+    }
+
+    public void setQuackBehavior(QuackBehavior qb) {
+        this.quackBehavior = qb;
+    }
 
     public void performQuack() {
-        flyBehavior.fly();
+        quackBehavior.quack();
     }
 
     public void performFly() {
-        quackBehavior.quack();
+        flyBehavior.fly();
     }
 
     public void swim() {

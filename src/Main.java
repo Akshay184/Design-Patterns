@@ -1,21 +1,18 @@
-import AddingBehaviors.DecoyDuck;
-import AddingBehaviors.MallardDuck;
-import AddingBehaviors.RubberDuck;
+import FinalGame.FlyBehavior.FlyRockerPower;
+import FinalGame.Implementation.MillardDuck;
+import FinalGame.Implementation.ModelDuck;
+import FinalGame.Implementation.RubberDuck;
 
 public class Main {
 
     public static void main(String[] args) {
-        MallardDuck mallard = new MallardDuck();
-        mallard.fly();
-        mallard.swim();
-        mallard.quack();
+        MillardDuck millard = new MillardDuck();
+        millard.performFly();
+        millard.performQuack();
 
-        RubberDuck rubber = new RubberDuck();
-        rubber.quack();
-
-        DecoyDuck decoy = new DecoyDuck();
-        decoy.swim();
-//        becuase decoy can't  fly
-//        decoy.fly();
+        ModelDuck model = new ModelDuck();
+        model.performFly();
+        model.setFlyBehavior(new FlyRockerPower());
+        model.performFly();
     }
 }
